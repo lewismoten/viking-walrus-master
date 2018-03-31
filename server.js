@@ -1,3 +1,5 @@
+/* eslint-env node, es6 */
+/* eslint no-console: off */
 let http = require('http');
 let fs = require('fs');
 let path = require('path');

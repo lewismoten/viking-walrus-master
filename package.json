@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/lewismoten/viking-walrus-master/issues"
   },
-  "homepage": "https://github.com/lewismoten/viking-walrus-master#readme"
+  "homepage": "https://github.com/lewismoten/viking-walrus-master#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
 }
