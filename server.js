@@ -18,9 +18,14 @@ function requestCallback(request, response) {
     request.url = '/favicon.png';
   }
   let localPath = '.' + url.parse(request.url).pathname;
+  if (localPath === './') {
+    localPath = "./index.html";
+  }
   fs.readFile(localPath, (error, content) => {
     if (error) {
-      if (error.code === 'EISDIR') {
+      if (error.code === 'ENOENT' && localPath === './index.html') {
+        showFolderContents(response, './');
+      } else if (error.code === 'EISDIR') {
         showFolderContents(response, localPath);
       } else {
         response.writeHead(HTTP_STATUS_INTERNAL_SERVER_ERROR, getHeaders('?.html'));
