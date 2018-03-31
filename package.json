@@ -1,0 +1,24 @@
+{
+  "name": "viking-walrus-master",
+  "version": "1.0.0",
+  "description": "Viking Walrus Master",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lewismoten/viking-walrus-master.git"
+  },
+  "keywords": [
+    "viking",
+    "walrus",
+    "master"
+  ],
+  "author": "Lewis Moten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lewismoten/viking-walrus-master/issues"
+  },
+  "homepage": "https://github.com/lewismoten/viking-walrus-master#readme"
+}
