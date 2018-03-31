@@ -51,7 +51,11 @@ function showFolderContents(response, folderPath) {
       response.write('<ol>', ENCODING);
       response.write('<li>\u{1F3E0}<a href="/">(root) /</a></li>', ENCODING);
       response.write('<li>\u{1F53C}<a href="../">(parent) ../</a></li>', ENCODING);
-      files.filter(isVisibleFile).forEach(writeLink, response);
+      let context = {
+        folder: folderPath,
+        response: response
+      };
+      files.filter(isVisibleFile).forEach(writeLink, context);
       response.end('</ol>', ENCODING);
     }
   });
@@ -64,15 +68,15 @@ function isVisibleFile(file) {
 function writeLink(file) {
   let icon = '\u{1F4C3}';
   try {
-    let stat = fs.statSync(file);
+    let stat = fs.statSync(path.join(this.folder, file));
     if (stat.isDirectory()) {
       file += '/';
       icon = '\u{1F4C1}';
     }
   } catch (e) {
-    // swallow (probably looking at a file in a hidden .folder path)
+    // swallow
   }
-  this.write(`<li>${icon}<a href="${file}">${file}</a></li>`, ENCODING);
+  this.response.write(`<li>${icon}<a href="${file}">${file}</a></li>`, ENCODING);
 }
 
 function getHeaders(localPath) {
