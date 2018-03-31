@@ -4,7 +4,7 @@
   "description": "Viking Walrus Master",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "atom --test ."
   },
   "repository": {
     "type": "git",
