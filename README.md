@@ -1,3 +1,5 @@
+![viking-walrus-master: Tile-map game with a horned-helmet walrus](docs/images/social-preview.png)
+
 # Viking Walrus Master
 
 What is this? Ideally a game. Probably a static tile-mapped game...
